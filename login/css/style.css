@@ -219,18 +219,15 @@ label.lbl-3 {
 	-moz-transition: 0.1s all;
 	-o-transition: 0.1s all;
 }
-/* Estiliza o vídeo de fundo */
 #bgvideo {
   position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1;           /* vídeo por trás de tudo */
-  object-fit: cover;     /* garante que cubra toda a área sem distorcer */
-  background-size: cover;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;       /* continua preenchendo tudo */
+  object-position: center top; /* mostra mais a parte de cima */
+  z-index: -1;
 }
 /*--/copyrights--*/
 /*--start-responsive-design--*/
