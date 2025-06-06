@@ -204,7 +204,7 @@ function validate() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
-    if (username == "Claudia" && password == "08052016") {
+    if (username == "jujuba" && password == "15062025") {
         window.location = "final.html";
         return false;
     }
