@@ -224,11 +224,11 @@ label.lbl-3 {
 .side-video {
   position: fixed;
   top: 50%;
-  right: 0;
-  width: 30%;              /* ajuste a largura que preferir */
-  max-width: 300px;         /* valor máximo opcional */
-  transform: translateY(-50%);
-  z-index: 0;               /* acima do fundo, mas atrás do formulário */
+  right: 10%;        /* move o vídeo mais pro meio da direita */
+  width: 40%;        /* deixa o vídeo maior */
+  max-width: 500px;  /* opcional: não ultrapassar 500px */
+  transform: translateY(-50%); 
+  z-index: 0;
 }
 
 .side-video video {
