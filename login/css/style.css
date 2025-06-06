@@ -70,8 +70,9 @@ h1 {
 	  font-size: 2em;
 }
 .login-form {
+	position: relative;  /* cria um contexto de empilhamento para o z-index */
+  	z-index: 1;          /* fica acima de qualquer coisa com z-index: 0 */
 	background: #2b2b36;
-	position: relative;
 	width: 30%;
 	margin: 3% auto 0 auto;
 	text-align: center;
@@ -218,6 +219,22 @@ label.lbl-3 {
 	-webkit-transition: 0.1s all;
 	-moz-transition: 0.1s all;
 	-o-transition: 0.1s all;
+}
+/* Vídeo lateral fixo na tela */
+.side-video {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  width: 30%;              /* ajuste a largura que preferir */
+  max-width: 300px;         /* valor máximo opcional */
+  transform: translateY(-50%);
+  z-index: 0;               /* acima do fundo, mas atrás do formulário */
+}
+
+.side-video video {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 /*--/copyrights--*/
 /*--start-responsive-design--*/
