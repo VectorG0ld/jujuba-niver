@@ -26,7 +26,7 @@ img{max-width:100%;}
 
 /* -- Body -- */
 body{
-	/* background: url(../images/bg.png) no-repeat 0px 0px; */
+	background: url(../images/bg.png) no-repeat 0px 0px;
 	/*font-family: 'Open Sans', sans-serif;*/
     font-family: 'Source Sans Pro', sans-serif; 
 	background-size:cover;
@@ -218,16 +218,6 @@ label.lbl-3 {
 	-webkit-transition: 0.1s all;
 	-moz-transition: 0.1s all;
 	-o-transition: 0.1s all;
-}
-#bgvideo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;       /* continua preenchendo tudo */
-  object-position: center top; /* mostra mais a parte de cima */
-  z-index: -1;
 }
 /*--/copyrights--*/
 /*--start-responsive-design--*/
