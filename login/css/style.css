@@ -25,19 +25,14 @@ img{max-width:100%;}
 
 
 /* -- Body -- */
-body {
+body{
 	background: url(../images/bg.png) no-repeat 0px 0px;
 	font-family: 'Source Sans Pro', sans-serif; 
-	background-size: cover;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	min-height: 1250px;
-
-	/* Zoom de 80% */
-	transform: scale(0.8);
-	transform-origin: top left;
-	width: 125%; /* compensa o espaço "encolhido" */
+	background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	min-height:1050px;
 }
 .wrap{
 	margin: 0 auto;
