@@ -224,7 +224,7 @@ label.lbl-3 {
 .side-video {
   position: fixed;
   top: 50%;
-  right: 10%;        /* move o vídeo mais pro meio da direita */
+  right: 5%;        /* move o vídeo mais pro meio da direita */
   width: 40%;        /* deixa o vídeo maior */
   max-width: 500px;  /* opcional: não ultrapassar 500px */
   transform: translateY(-50%); 
@@ -235,6 +235,12 @@ label.lbl-3 {
   width: 100%;
   height: auto;
   display: block;
+
+  /* Começo da moldura */
+  border: 8px solid #ffffff;     /* borda branca de 8px */
+  border-radius: 12px;           /* cantos levemente arredondados */
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);  /* sombra suave em volta */
+  /* Fim da moldura */
 }
 /*--/copyrights--*/
 /*--start-responsive-design--*/
