@@ -309,13 +309,15 @@ label.lbl-3 {
 @media (max-width:768px){
 	.login-form {
 	  width: 50%;
-	    margin: 12% auto 0 auto;
+	  margin: 12% auto 0 auto;
 	}
 	.key {
 	  background: url(../images/pass.png) no-repeat 342px 18px;
 	}
 	body {
 	  min-height: 929px;
+	  transform: none;
+	  width: auto;
 	}
 }
 @media (max-width:640px){
@@ -387,12 +389,5 @@ label.lbl-3 {
 	  font-size: 28px;
 	  padding: 10px 0;
 	}
-@media (max-width: 768px) {
-  body {
-    transform: none;
-    width: auto;
-  }
-}
-
 }
 /*--end-responsive-design--*/
