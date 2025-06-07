@@ -237,7 +237,7 @@ label.lbl-3 {
   display: block;
 
   /* Começo da moldura */
-  border: 8px solid #ffffff;     /* borda branca de 8px */
+  border: 8px solid #162838;     /* borda branca de 8px */
   border-radius: 12px;           /* cantos levemente arredondados */
   box-shadow: 0 0 20px rgba(0,0,0,0.5);  /* sombra suave em volta */
   /* Fim da moldura */
