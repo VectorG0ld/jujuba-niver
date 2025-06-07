@@ -250,7 +250,7 @@ label.lbl-3 {
   height: 100%;
   z-index: 2;
   pointer-events: none; /* permite clicar no vídeo mesmo com a moldura sobreposta */
-  background-image: url('assets/images/frame-rosas.png');
+  background-image: url('../images/frame-rosas.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
