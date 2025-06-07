@@ -102,7 +102,7 @@ h1 {
 	border-top-right-radius: 10px;
 	-webkit-border-top-right-radius: 10px;
 	-moz-border-top-right-radius: 10px;
-	-o-border-top-right-radius: 10px;
+	-o-border-top-right-radius: 10p
 }
 input[type="text"] {
 	  width: 70%;
@@ -220,42 +220,28 @@ label.lbl-3 {
 	-moz-transition: 0.1s all;
 	-o-transition: 0.1s all;
 }
-/* Contêiner fixo lateral */
+/* Vídeo lateral fixo na tela */
 .side-video {
   position: fixed;
   top: 50%;
-  right: 5%;
-  width: 40%;
-  max-width: 500px;
-  transform: translateY(-50%);
-  z-index: 10;
-  aspect-ratio: 16 / 9;
-  display: grid;
-  place-items: center;
+  right: 5%;        /* move o vídeo mais pro meio da direita */
+  width: 40%;        /* deixa o vídeo maior */
+  max-width: 500px;  /* opcional: não ultrapassar 500px */
+  transform: translateY(-50%); 
+  z-index: 0;
 }
 
-/* Vídeo com z-index inferior */
 .side-video video {
   width: 100%;
   height: auto;
-  position: relative;
-  z-index: 1;
-}
+  display: block;
 
-/* Moldura exatamente do tamanho do vídeo */
-.video-frame {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none; /* permite clicar no vídeo mesmo com a moldura sobreposta */
-  background-image: url('../images/frame-rosas.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  /* Começo da moldura */
+  border: 8px solid #ffffff;     /* borda branca de 8px */
+  border-radius: 12px;           /* cantos levemente arredondados */
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);  /* sombra suave em volta */
+  /* Fim da moldura */
 }
-
 /*--/copyrights--*/
 /*--start-responsive-design--*/
 @media (max-width:1440px){
