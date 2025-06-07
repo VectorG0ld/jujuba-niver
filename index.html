@@ -1,62 +1,154 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Feliz aniversário, minha Jujuba! 🎉</title>
-        <link rel="shortcut icon" href="assets/css/images/favicon.png">
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <title>Feliz aniversário, minha Jujuba! 🎉</title>
+  <link rel="shortcut icon" href="assets/css/images/favicon.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <!-- Twitter Cards -->
-        <meta name="twitter:title" content="Feliz aniversário, minha Jujuba! 🎉 " />
-        <meta name="twitter:description" content=" 'SIM!. &#10084'                                          Victor! Julia  acabou de verificar o coraçãozinho. Lembre de enviar flores! ;)          Usuario: jujuba   Senha: 15062025" />
-        <meta name="twitter:image" content="https://VectorG0ld.github.io/assets/css/images/facebook_imagem.png" />
-        <meta name="twitter:card" content="summary_large_image" />
+  <!-- Twitter Cards -->
+  <meta name="twitter:title" content="Feliz aniversário, minha Jujuba! 🎉" />
+  <meta name="twitter:description" content="'SIM!. ❤️' Victor! Julia acabou de verificar o coraçãozinho. Lembre de enviar flores! ;) Usuario: jujuba Senha: 15062025" />
+  <meta name="twitter:image" content="https://VectorG0ld.github.io/assets/css/images/facebook_imagem.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-        <!-- Facebook Open Graph -->
-        <meta property="og:image" content="https://VectorG0ld.github.io/assets/css/images/facebook_imagem.png" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width"  content="600" />
-        <meta property="og:image:height" content="315" />
-        <meta property="og:site_name" content="VectorG0ld.space" />
-        <meta property="og:title" content="Feliz aniversário, minha Jujuba! 🎉" />
-        <meta property="og:description" content=" 'SIM!. &#10084'                                          Victor! Julia  acabou de verificar o coraçãozinho. Lembre de enviar flores! ;)          Usuario: jujuba   Senha: 15062025" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://VectorG0ld.github.io/" />
-        <meta property="fb:app_id" content="1140424696044800" />
-        <meta property="fb:admins" content="100000462238479" />
+  <!-- Facebook Open Graph -->
+  <meta property="og:image" content="https://VectorG0ld.github.io/assets/css/images/facebook_imagem.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="315" />
+  <meta property="og:site_name" content="VectorG0ld.space" />
+  <meta property="og:title" content="Feliz aniversário, minha Jujuba! 🎉" />
+  <meta property="og:description" content="'SIM!. ❤️' Victor! Julia acabou de verificar o coraçãozinho. Lembre de enviar flores! ;) Usuario: jujuba Senha: 15062025" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://VectorG0ld.github.io/" />
+  <meta property="fb:app_id" content="1140424696044800" />
+  <meta property="fb:admins" content="100000462238479" />
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="assets/css/main.css"/>
-		<link rel="stylesheet" href="assets/css/font-awesome-animation.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/main.css"/>
+  <link rel="stylesheet" href="assets/css/font-awesome-animation.min.css">
 
-	</head>
-	<body class="loading">
-		<!-- Música de Fundo -->
-        <audio src="assets/audio/musica-home.mp3" controls autoplay loop></audio>
-		<div id="wrapper">
-			<div id="bg"></div>
-			<div id="overlay"></div>
-			<div id="main">
-				<!-- Header -->
-				<header id="header">
-					<h1>Oii Princesa, chegou o seu dia!! 👸❤️</h1>
-					<p>Quis fazer algo simples, mas especial, só pra te arrancar um sorriso hoje. Não vou contar tudo agora, mas espero que goste dessa pequena surpresa.</p>
-					<p>Aproveita seu dia, você merece tudo de melhor!</p>
-				    <nav>
-				        <ul>
-				            <li><a href="login.html" class="icon fa-heart faa-pulse animated"><span class="label">heart</span></a></li>
-				            <li><a href="#" class="icon fa-times-circle"><span class="label">times</span></a></li>
-				        </ul>
-				    </nav>
-				</header>
-				<!-- Footer -->
-				<footer id="footer"><span class="icon fa-volume-up"><span class="label">volume-up</span></footer>
-            </div>
-		</div>
-		<script>
-			window.onload = function() { document.body.className = ''; }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-		</script>
-	</body>
+  <style>
+    /* Tela de entrada com fundo animado */
+    #intro-screen {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 9999;
+      text-align: center;
+      color: white;
+      font-family: 'Source Sans Pro', sans-serif;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    .intro-bg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url("images/bg.png") repeat;
+      background-size: cover;
+      animation: bg-scroll 60s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes bg-scroll {
+      0% { background-position: 0 0; }
+      100% { background-position: 100% 0; }
+    }
+
+    .intro-content h1 {
+      font-size: 2.2em;
+      margin-bottom: 0.5em;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .intro-content p {
+      font-size: 1.5em;
+      margin-bottom: 2em;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .intro-content button {
+      padding: 0.7em 2em;
+      font-size: 1.2em;
+      background-color: #3ea751;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #000;
+      transition: background-color 0.3s ease;
+    }
+
+    .intro-content button:hover {
+      background-color: #ff2775;
+    }
+  </style>
+</head>
+<body class="loading">
+
+  <!-- TELA DE ENTRADA -->
+  <div id="intro-screen">
+    <div class="intro-content">
+      <h1>Chegou o momento, minha Jujuba! 🎉</h1>
+      <p>Clique no botão abaixo para começar essa pequena surpresa.</p>
+      <button onclick="startSite()">Entrar</button>
+  </div>
+	<span class="heart" style="left: 10%; animation-delay: 0s; font-size: 20px;">💖</span>
+	<span class="heart" style="left: 25%; animation-delay: 2s; font-size: 26px;">🐱</span>
+	<span class="heart" style="left: 40%; animation-delay: 4s; font-size: 18px;">💞</span>
+	<span class="heart" style="left: 55%; animation-delay: 1.5s; font-size: 30px;">😽</span>
+	<span class="heart" style="left: 70%; animation-delay: 3s; font-size: 22px;">💓</span>
+	<span class="heart" style="left: 85%; animation-delay: 5s; font-size: 28px;">😺</span>
+	
+  </div>
+
+  <!-- MÚSICA DE FUNDO -->
+  <audio id="bg-music" src="assets/audio/musica-home.mp3" loop></audio>
+
+  <!-- CONTEÚDO PRINCIPAL DO SITE -->
+  <div id="wrapper" style="display: none;">
+    <div id="bg"></div>
+    <div id="overlay"></div>
+    <div id="main">
+      <!-- Header -->
+      <header id="header">
+        <h1>Oii Princesa, chegou o seu dia!! 👸❤️</h1>
+        <p>Quis fazer algo simples, mas especial, só pra te arrancar um sorriso hoje. Não vou contar tudo agora, mas espero que goste dessa pequena surpresa.</p>
+        <p>Aproveita seu dia, você merece tudo de melhor!</p>
+        <nav>
+          <ul>
+            <li><a href="login.html" class="icon fa-heart faa-pulse animated"><span class="label">heart</span></a></li>
+            <li><a href="#" class="icon fa-times-circle"><span class="label">times</span></a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Footer -->
+      <footer id="footer"><span class="icon fa-volume-up"><span class="label">volume-up</span></span></footer>
+    </div>
+  </div>
+
+  <!-- JavaScript para controle -->
+  <script>
+    function startSite() {
+      const music = document.getElementById('bg-music');
+      music.play();
+      document.getElementById('intro-screen').style.display = 'none';
+      document.getElementById('wrapper').style.display = 'block';
+    }
+
+    window.onload = function () {
+      document.body.className = '';
+    }
+    window.ontouchmove = function () { return false; }
+    window.onorientationchange = function () { document.body.scrollTop = 0; }
+  </script>
+</body>
 </html>
