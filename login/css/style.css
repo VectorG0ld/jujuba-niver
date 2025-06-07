@@ -224,10 +224,10 @@ label.lbl-3 {
 .side-video {
   position: fixed;
   top: 50%;
-  right: 5%;        /* move o vídeo mais pro meio da direita */
-  width: 40%;        /* deixa o vídeo maior */
-  max-width: 500px;  /* opcional: não ultrapassar 500px */
-  transform: translateY(-50%); 
+  right: 5%;
+  width: 40%;
+  max-width: 500px;
+  transform: translateY(-50%);
   z-index: 0;
 }
 
@@ -235,12 +235,22 @@ label.lbl-3 {
   width: 100%;
   height: auto;
   display: block;
+  border: 8px solid #370764;
+  border-radius: 100px;
+  box-shadow: 0 0 20px rgba(132, 0, 255, 0.5);
+}
 
-  /* Começo da moldura */
-  border: 8px solid #370764;     /* borda branca de 8px */
-  border-radius: 65px;           /* cantos levemente arredondados */
-  box-shadow: 0 0 20px rgba(132, 0, 255, 0.5);  /* sombra suave em volta */
-  /* Fim da moldura */
+.side-video .video-text {
+  position: absolute;
+  top: -70px; /* ajustável */
+  width: 100%;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #fff;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  text-shadow: 0 0 5px #000000;
+  pointer-events: none; /* para não interferir no clique do vídeo */
 }
 /*--/copyrights--*/
 /*--start-responsive-design--*/
