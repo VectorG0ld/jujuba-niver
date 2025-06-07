@@ -228,7 +228,8 @@ label.lbl-3 {
   width: 40%;
   max-width: 500px;
   transform: translateY(-50%);
-  z-index: 0;
+  z-index: 9999; /* Alta prioridade para ficar por cima */
+  pointer-events: none; /* Ignora cliques (opcional) */
 }
 
 .side-video video {
@@ -244,6 +245,7 @@ label.lbl-3 {
   border-image-width: 50px;                     /* aplica 50px de moldura em todos os lados */
   border-image-repeat: stretch;                 /* estica as bordas laterais para preencher */
 }
+
 /*--/copyrights--*/
 /*--start-responsive-design--*/
 @media (max-width:1440px){
