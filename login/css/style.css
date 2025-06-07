@@ -224,23 +224,47 @@ label.lbl-3 {
 .side-video {
   position: fixed;
   top: 50%;
-  right: 5%;        /* move o vídeo mais pro meio da direita */
-  width: 40%;        /* deixa o vídeo maior */
-  max-width: 500px;  /* opcional: não ultrapassar 500px */
-  transform: translateY(-50%); 
+  right: 10%;
+  width: 40%;
+  max-width: 500px;
+  transform: translateY(-50%);
   z-index: 0;
 }
 
+/* contêiner para vídeo + rosas */
 .side-video video {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 12px;   /* opcional, para suavizar cantos */
+  position: relative;
+  z-index: 1;
+}
 
-  /* Começo da moldura */
-  border: 8px solid #ffffff;     /* borda branca de 8px */
-  border-radius: 12px;           /* cantos levemente arredondados */
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);  /* sombra suave em volta */
-  /* Fim da moldura */
+/* rosa no canto superior esquerdo */
+.side-video::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 60px;
+  height: 60px;
+  background: url('../images/rosa.png') no-repeat center center;
+  background-size: contain;
+  z-index: 2;
+}
+
+/* rosa no canto inferior direito */
+.side-video::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 60px;
+  height: 60px;
+  background: url('../images/rosa.png') no-repeat center center;
+  background-size: contain;
+  z-index: 2;
 }
 /*--/copyrights--*/
 /*--start-responsive-design--*/
