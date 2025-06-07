@@ -220,7 +220,7 @@ label.lbl-3 {
 	-moz-transition: 0.1s all;
 	-o-transition: 0.1s all;
 }
-/* Vídeo lateral fixo na tela */
+/* Contêiner fixo lateral */
 .side-video {
   position: fixed;
   top: 50%;
@@ -228,22 +228,31 @@ label.lbl-3 {
   width: 40%;
   max-width: 500px;
   transform: translateY(-50%);
-  z-index: 9999; /* Alta prioridade para ficar por cima */
-  pointer-events: none; /* Ignora cliques (opcional) */
+  z-index: 10;
 }
 
+/* Vídeo responsivo */
 .side-video video {
   width: 100%;
   height: auto;
   display: block;
+  position: relative;
+  z-index: 1;
+  border: none;
+}
 
-  /* moldura de rosas via border-image */
-  border: 50px solid transparent;               /* reserva 50px para a moldura */
-  box-sizing: border-box;                       /* faz o vídeo encaixar dentro do frame */
-  border-image-source: url('../images/frame-rosas.png');
-  border-image-slice: 50;                       /* fatia interna correspondente à largura da borda */
-  border-image-width: 50px;                     /* aplica 50px de moldura em todos os lados */
-  border-image-repeat: stretch;                 /* estica as bordas laterais para preencher */
+/* Moldura por cima do vídeo */
+.video-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none; /* permite clicar no vídeo mesmo com a moldura sobreposta */
+  background-image: url('assets/images/frame-rosas.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 /*--/copyrights--*/
