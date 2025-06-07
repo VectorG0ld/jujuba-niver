@@ -229,19 +229,22 @@ label.lbl-3 {
   max-width: 500px;
   transform: translateY(-50%);
   z-index: 10;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Vídeo responsivo */
+/* Vídeo */
 .side-video video {
   width: 100%;
   height: auto;
   display: block;
   position: relative;
   z-index: 1;
-  border: none;
 }
 
-/* Moldura por cima do vídeo */
+/* Moldura por cima */
 .video-frame {
   position: absolute;
   top: 0;
