@@ -384,5 +384,33 @@ label.lbl-3 {
 	  font-size: 28px;
 	  padding: 10px 0;
 	}
+	@media (max-width: 768px) {
+	  .container {
+	    flex-direction: column;
+	    align-items: center; /* centraliza no mobile */
+	  }
+  
+	  .side-video {
+	    position: relative;
+	    width: 90%;
+	    top: auto;
+	    right: auto;
+	    transform: none;
+	    margin-top: 2em;
+	    z-index: 0;
+	  }
+  
+	  .side-video .video-text {
+	    position: static;
+	    margin-bottom: 1em;
+	    text-align: center;
+	  }
+  
+	  .side-video video {
+	    width: 100%;
+	    border-radius: 25px;
+	    border: 4px solid #370764;
+	  }
+	}
 }
 /*--end-responsive-design--*/
