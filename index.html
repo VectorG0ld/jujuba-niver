@@ -28,88 +28,37 @@
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/main.css"/>
   <link rel="stylesheet" href="assets/css/font-awesome-animation.min.css">
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
 
-  <style>
-    /* Tela de entrada com fundo animado */
-    #intro-screen {
-      position: fixed;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      z-index: 9999;
-      text-align: center;
-      color: white;
-      font-family: 'Source Sans Pro', sans-serif;
-      padding: 2rem;
-      overflow: hidden;
-    }
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    .intro-bg {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: url("images/bg.png") repeat;
-      background-size: cover;
-      animation: bg-scroll 60s linear infinite;
-      z-index: -1;
-    }
-
-    @keyframes bg-scroll {
-      0% { background-position: 0 0; }
-      100% { background-position: 100% 0; }
-    }
-
-    .intro-content h1 {
-      font-size: 2.2em;
-      margin-bottom: 0.5em;
-      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
-    }
-
-    .intro-content p {
-      font-size: 1.5em;
-      margin-bottom: 2em;
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-    }
-
-    .intro-content button {
-      padding: 0.7em 2em;
-      font-size: 1.2em;
-      background-color: #3ea751;
-      color: white;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      box-shadow: 0 0 10px #000;
-      transition: background-color 0.3s ease;
-    }
-
-    .intro-content button:hover {
-      background-color: #ff2775;
-    }
-  </style>
 </head>
+
 <body class="loading">
+
+  <!-- TELA DE INTRODUÇÃO: FRASES COM BRILHO -->
+  <div id="preintro-screen">
+    <div id="preintro-text">Create by Victor</div>
+  </div>
 
   <!-- TELA DE ENTRADA -->
   <div id="intro-screen">
     <div class="intro-content">
-	<h1 style="margin-bottom: 1.2em; line-height: 1.3;">
-	  Às vezes, o universo responde não com palavras…<br>
-	  mas com pessoas como você. ❤️
-	</h1>
+      <h1 style="margin-bottom: 1.2em; line-height: 1.3;">
+        Às vezes, o universo responde não com palavras…<br>
+        mas com pessoas como você. ❤️
+      </h1>
       <p>Clique no botão abaixo para começar essa pequena surpresa.</p>
       <button onclick="startSite()">Entrar</button>
-  </div>
-	<span class="heart" style="left: 10%; animation-delay: 0s; font-size: 20px;">💖</span>
-	<span class="heart" style="left: 25%; animation-delay: 2s; font-size: 26px;">🐱</span>
-	<span class="heart" style="left: 40%; animation-delay: 4s; font-size: 18px;">💞</span>
-	<span class="heart" style="left: 55%; animation-delay: 1.5s; font-size: 30px;">😽</span>
-	<span class="heart" style="left: 70%; animation-delay: 3s; font-size: 22px;">💓</span>
-	<span class="heart" style="left: 85%; animation-delay: 5s; font-size: 28px;">😺</span>
-	
+    </div>
+
+    <!-- Emojis animados -->
+    <span class="heart" style="left: 10%; animation-delay: 0s; font-size: 20px;">💖</span>
+    <span class="heart" style="left: 25%; animation-delay: 2s; font-size: 26px;">🐱</span>
+    <span class="heart" style="left: 40%; animation-delay: 4s; font-size: 18px;">💞</span>
+    <span class="heart" style="left: 55%; animation-delay: 1.5s; font-size: 30px;">😽</span>
+    <span class="heart" style="left: 70%; animation-delay: 3s; font-size: 22px;">💓</span>
+    <span class="heart" style="left: 85%; animation-delay: 5s; font-size: 28px;">😺</span>
   </div>
 
   <!-- MÚSICA DE FUNDO -->
@@ -134,12 +83,58 @@
       </header>
 
       <!-- Footer -->
-      <footer id="footer"><span class="icon fa-volume-up"><span class="label">volume-up</span></span></footer>
+      <footer id="footer">
+        <span class="icon fa-volume-up"><span class="label">volume-up</span></span>
+      </footer>
     </div>
   </div>
 
-  <!-- JavaScript para controle -->
+  <!-- JavaScript para frases e transições -->
   <script>
+    const frases = ["Create by Victor", "Com muito amor e carinho ❤️"];
+    const texto = document.getElementById("preintro-text");
+    const tela = document.getElementById("preintro-screen");
+    const intro = document.getElementById("intro-screen");
+    let animacaoJaExecutou = false; // ✅ controle
+
+    function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function mostrarFrasesSuavemente() {
+      if (animacaoJaExecutou) return; // ❌ impede repetição
+      animacaoJaExecutou = true;      // ✅ marca como já executado
+
+      tela.style.display = "flex";
+      tela.style.opacity = "1";
+      intro.style.display = "flex";
+      intro.style.opacity = "0";
+
+      for (let frase of frases) {
+        texto.style.opacity = "0";
+        await delay(300);
+        texto.textContent = frase;
+        texto.style.opacity = "1";
+        await delay(3000);
+        texto.style.opacity = "0";
+        await delay(1000);
+      }
+
+      tela.style.transition = "opacity 1.2s ease";
+      intro.style.transition = "opacity 1.2s ease";
+      tela.style.opacity = "0";
+      intro.style.opacity = "1";
+
+      await delay(1200);
+      tela.style.display = "none";
+    }
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") mostrarFrasesSuavemente();
+    });
+
+    if (document.visibilityState === "visible") mostrarFrasesSuavemente();
+
     function startSite() {
       const music = document.getElementById('bg-music');
       music.play();
@@ -147,11 +142,10 @@
       document.getElementById('wrapper').style.display = 'block';
     }
 
-    window.onload = function () {
-      document.body.className = '';
-    }
-    window.ontouchmove = function () { return false; }
-    window.onorientationchange = function () { document.body.scrollTop = 0; }
+    window.onload = () => { document.body.className = ''; };
+    window.ontouchmove = () => false;
+    window.onorientationchange = () => { document.body.scrollTop = 0; };
   </script>
+
 </body>
 </html>
