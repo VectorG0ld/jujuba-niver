@@ -1277,3 +1277,8 @@
   	  0 0 30px rgba(255, 105, 180, 0.8),
   	  0 0 45px rgba(255, 105, 180, 0.7);
 	}
+	#wrapper {
+	  display: block;          /* garante que ele esteja visível */
+	  opacity: 1;              /* ponto de partida */
+	  transition: opacity 1s ease; /* duração do fade-out */
+	}

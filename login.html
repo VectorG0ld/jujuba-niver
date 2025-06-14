@@ -1,56 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <title>Minha Princesa!</title>
-  <link rel="shortcut icon" href="assets/css/images/favicon.png">
-  <link href="login/css/style.css" rel='stylesheet' type='text/css'/>
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="keywords" content="Login form, Responsive Templates, etc." />
+  <title>Minha Princesa!</title>
+  <link rel="shortcut icon" href="assets/css/images/favicon.png">
+  <link rel="stylesheet" href="login/css/style.css">
+  <link rel="stylesheet" href="login/css/bootstrap.min.css">
+  <link rel="stylesheet" href="login/css/sweetalert.css">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald:400,300,700|Exo+2" rel="stylesheet">
 
+  <!-- remove URL bar on mobile -->
   <script type="application/x-javascript">
-    addEventListener("load", function () {
-      setTimeout(hideURLbar, 0);
-    }, false);
-    function hideURLbar() {
-      window.scrollTo(0, 1);
-    }
+    addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+    function hideURLbar(){ window.scrollTo(0,1); }
   </script>
 
-  <!-- Twitter Cards -->
+  <!-- Open Graph & Twitter Cards -->
   <meta name="twitter:title" content="Minha Princesa!" />
-  <meta name="twitter:description" content="'SIM!. ❤️' Victor! Julia acabou de verificar o coraçãozinho. Lembre de enviar flores! ;) Usuario: jujuba Senha: 15062025" />
+  <meta name="twitter:description" content="'SIM!. ❤️' Victor! Julia acabou de verificar o coraçãozinho..." />
   <meta name="twitter:image" content="https://VectorG0ld.github.io/assets/css/images/facebook_imagem.png" />
   <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Facebook Open Graph -->
-  <meta property="og:image" content="https://VectorG0ld.github.io/assets/css/images/facebook_imagem.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="600" />
-  <meta property="og:image:height" content="315" />
-  <meta property="og:site_name" content="VectorG0ld.space" />
   <meta property="og:title" content="Oii Minha Princesa!" />
-  <meta property="og:description" content="'SIM!. ❤️' Victor! Julia acabou de verificar o coraçãozinho. Lembre de enviar flores! ;) Usuario: jujuba Senha: 15062025" />
+  <meta property="og:description" content="'SIM!. ❤️' Victor! Julia acabou de verificar o coraçãozinho..." />
+  <meta property="og:image" content="https://VectorG0ld.github.io/assets/css/images/facebook_imagem.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://VectorG0ld.github.io/" />
   <meta property="fb:app_id" content="1140424696044800" />
   <meta property="fb:admins" content="100000462238479" />
 
-  <!-- Sweet Alert -->
+  <!-- SweetAlert, jQuery, Bootstrap JS -->
   <script src="login/js/sweetalert.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="login/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="login/css/sweetalert.css">
-  <link rel="stylesheet" type="text/css" href="login/css/bootstrap.min.css">
 
-  <!-- Webfonts -->
-  <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald:400,300,700|Exo+2' rel='stylesheet' type='text/css'>
+  <!-- seu script de validação -->
+  <script src="login/js/meusol.js"></script>
 
-  <!-- Login -->
-  <script language="JavaScript" src="login/js/meusol.js"></script>
-
+  <!-- fade-in do body e estilo do botão -->
   <style>
+    body {
+      opacity: 0;
+      transition: opacity 5s ease;
+    }
+    body.loaded {
+      opacity: 1;
+    }
     #countdown-timer {
       font-size: 1.6em;
       color: white;
@@ -58,25 +53,30 @@
       font-weight: bold;
       animation: pulse 15s infinite;
     }
-
+    /* botão inicialmente invisível e desabilitado */
     #submit {
       opacity: 0;
-      transition: opacity 2s ease-in-out;
+      transition: opacity 0.5s ease-in-out;
+      pointer-events: none;
     }
-
+    /* quando habilitado, pointer-events restaura-se automaticamente */
+    #submit:not([disabled]) {
+      pointer-events: auto;
+    }
     @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.1); }
       100% { transform: scale(1); }
     }
   </style>
 </head>
+
 <body>
-  <!-- Caixa lateral com vídeo -->
+  <!-- vídeo lateral -->
   <div class="side-video">
     <div class="video-text">
-      <p style="font-size: 1.5em;">E a vida passa, num piscar de olhos,</p>
-      <p style="font-size: 1.5em;">logo já são 1, 2 e enfim seus 19...❤️</p>
+      <p style="font-size:1.5em; font-weight:bold;">E a vida passa, num piscar de olhos,</p>
+      <p style="font-size:1.5em; font-weight:bold;">logo já são 1, 2 e enfim seus 19...❤️</p>
     </div>
     <video autoplay muted loop>
       <source src="assets/video/video.mp4" type="video/mp4">
@@ -84,10 +84,10 @@
     </video>
   </div>
 
-  <!-- Música de Fundo -->
+  <!-- música de fundo -->
   <audio src="assets/audio/musica-login.mp3" controls autoplay loop></audio>
 
-  <!-- Formulário de Login -->
+  <!-- formulário de login -->
   <h1>&ensp;</h1>
   <div class="login-form">
     <div class="close"></div>
@@ -97,34 +97,47 @@
       <label class="lbl-3"></label>
     </div>
     <div class="clear"></div>
-    <div class="avtar"><img src="login/images/avtar.png" /></div>
+    <div class="avtar"><img src="login/images/avtar.png" alt="Avatar" /></div>
     <form>
-      <input type="text" class="text" value="Nome" id="username"
-             onfocus="this.value = '';"
-             onblur="if (this.value == '') {this.value = 'Nome';}" >
+      <input
+        type="text"
+        class="text"
+        id="username"
+        value="Nome"
+        onfocus="this.value='';"
+        onblur="if(this.value==''){this.value='Nome';}"
+      />
       <div class="key">
-        <input type="password" value="password" id="password"
-               onfocus="this.value = '';"
-               onblur="if (this.value == '') {this.value = 'password';}">
+        <input
+          type="password"
+          id="password"
+          value="password"
+          onfocus="this.value='';"
+          onblur="if(this.value==''){this.value='password';}"
+        />
       </div>
     </form>
 
-    <!-- Timer e botão -->
+    <!-- timer e botão -->
     <div id="countdown-timer">Aguarde 20 segundos...</div>
     <div class="signin">
-      <input type="submit" value="Estou pronta! &#10084;" id="submit" onclick="validate()">
+      <input
+        type="submit"
+        id="submit"
+        value="Estou pronta! &#10084;"
+        onclick="validate()"
+        disabled
+      />
     </div>
   </div>
 
   <div class="copy-rights"><p></p></div>
 
-  <!-- Timer Script -->
+  <!-- script do timer -->
   <script>
     document.body.style.zoom = "60%";
-
     const timerEl = document.getElementById("countdown-timer");
-    const button = document.getElementById("submit");
-
+    const button  = document.getElementById("submit");
     let seconds = 20;
     timerEl.textContent = `Aguarde ${seconds} segundos...`;
 
@@ -134,9 +147,18 @@
       if (seconds <= 0) {
         clearInterval(countdown);
         timerEl.style.display = "none";
-        button.style.opacity = "1"; // Aparece suavemente
+        // habilita e exibe o botão
+        button.removeAttribute('disabled');
+        button.style.opacity = "1";
       }
     }, 1000);
+  </script>
+
+  <!-- dispara o fade-in -->
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
   </script>
 </body>
 </html>
