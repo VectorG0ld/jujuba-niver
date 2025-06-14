@@ -1,94 +1,142 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Minha Princesa!</title>
-        <link rel="shortcut icon" href="assets/css/images/favicon.png">
-        <link href="login/css/style.css" rel='stylesheet' type='text/css'/>
+<head>
+  <title>Minha Princesa!</title>
+  <link rel="shortcut icon" href="assets/css/images/favicon.png">
+  <link href="login/css/style.css" rel='stylesheet' type='text/css'/>
 
-        <meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="keywords" content="Flat Dark Web Login Form Responsive Templates, Iphone Widget Template, Smartphone login forms,Login form, Widget Template, Responsive Templates, a Ipad 404 Templates, Flat Responsive Templates" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="Login form, Responsive Templates, etc." />
 
-        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <script type="application/x-javascript">
+    addEventListener("load", function () {
+      setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
 
-        <!-- Twitter Cards -->
-        <meta name="twitter:title" content="Minha Princesa! " />
-        <meta name="twitter:description" content=" 'SIM!. &#10084'                                          Victor! Julia acabou de verificar o coraçãozinho. Lembre de enviar flores! ;)          Usuario: jujuba   Senha: 15062025" />
-        <meta name="twitter:image" content="https://VectorG0ld.github.io/assets/css/images/facebook_imagem.png" />
-        <meta name="twitter:card" content="summary_large_image" />
+  <!-- Twitter Cards -->
+  <meta name="twitter:title" content="Minha Princesa!" />
+  <meta name="twitter:description" content="'SIM!. ❤️' Victor! Julia acabou de verificar o coraçãozinho. Lembre de enviar flores! ;) Usuario: jujuba Senha: 15062025" />
+  <meta name="twitter:image" content="https://VectorG0ld.github.io/assets/css/images/facebook_imagem.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-        <!-- Facebook Open Graph -->
-        <meta property="og:image" content="https://VectorG0ld.github.io/assets/css/images/facebook_imagem.png" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width"  content="600" />
-        <meta property="og:image:height" content="315" />
-        <meta property="og:site_name" content="VectorG0ld.space" />
-        <meta property="og:title" content="Oii Minha Princesa!" />
-        <meta property="og:description" content=" 'SIM!. &#10084'                                          Victor! Julia acabou de verificar o coraçãozinho. Lembre de enviar flores! ;)          Usuario: jujuba   Senha: 15062025" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://VectorG0ld.github.io/" />
-        <meta property="fb:app_id" content="1140424696044800" />
-        <meta property="fb:admins" content="100000462238479" />
+  <!-- Facebook Open Graph -->
+  <meta property="og:image" content="https://VectorG0ld.github.io/assets/css/images/facebook_imagem.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="315" />
+  <meta property="og:site_name" content="VectorG0ld.space" />
+  <meta property="og:title" content="Oii Minha Princesa!" />
+  <meta property="og:description" content="'SIM!. ❤️' Victor! Julia acabou de verificar o coraçãozinho. Lembre de enviar flores! ;) Usuario: jujuba Senha: 15062025" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://VectorG0ld.github.io/" />
+  <meta property="fb:app_id" content="1140424696044800" />
+  <meta property="fb:admins" content="100000462238479" />
 
+  <!-- Sweet Alert -->
+  <script src="login/js/sweetalert.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="login/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="login/css/sweetalert.css">
+  <link rel="stylesheet" type="text/css" href="login/css/bootstrap.min.css">
 
-        <!-- Sweet Alert -->
-        <script src="login/js/sweetalert.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="login/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="login/css/sweetalert.css">
-        <link rel="stylesheet" type="text/css" href="login/css/bootstrap.min.css">
+  <!-- Webfonts -->
+  <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald:400,300,700|Exo+2' rel='stylesheet' type='text/css'>
 
-		<!-- Webfonts -->
-		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald:400,300,700' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+  <!-- Login -->
+  <script language="JavaScript" src="login/js/meusol.js"></script>
 
-		<!-- Login -->
-		<script language="JavaScript" src="login/js/meusol.js"></script>
+  <style>
+    #countdown-timer {
+      font-size: 1.6em;
+      color: white;
+      margin-top: 20px;
+      font-weight: bold;
+      animation: pulse 15s infinite;
+    }
 
-	</head>
-	<body>
-		<!-- Caixa lateral com vídeo -->
-		<div class="side-video">
-		  <div class="video-text">
-			<p style="font-size: 1.5em;">E a vida passa, num piscar de olhos,</p>
-			<p style="font-size: 1.5em;">logo já são 1, 2 e enfim seus 19...❤️</p>
-		  </div>
-		  <video autoplay muted loop>
-		    <source src="assets/video/video.mp4" type="video/mp4">
-		    Seu navegador não suporta vídeo.
-		  </video>
-		</div>
-		<!-- Música de Fundo -->
-		<audio src="assets/audio/musica-login.mp3" controls autoplay loop></audio>
-		<script>
-		$(document).ready(function(c) {
-			$('.close').on('click', function(c){
-				$('.login-form').fadeOut('slow', function(c){
-	  				$('.login-form').remove();
-				});
-			});
-		});
-		</script>
-		<!-- Formulário de Login -->
-		<h1>&ensp;</h1>
-		<div class="login-form">
-            <div class="close"></div>
-			<div class="head-info">
-				<label class="lbl-1"></label>
-				<label class="lbl-2"></label>
-				<label class="lbl-3"></label>
-			</div>
-            <div class="clear"></div>
-			<div class="avtar"><img src="login/images/avtar.png" /></div>
-			<form>
-				<input type="text" class="text" value="Nome" id="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Nome';}" >
-				<div class="key"><input type="password" value="password" id="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"></div>
-			</form>
-			<div class="signin"><input type="submit" value="Estou pronta! &#10084;" id="submit" onclick="validate()" ></div>
-		</div>
- 		<div class="copy-rights"><p></a> </p></div>
-		<script>
-		  document.body.style.zoom = "60%";
-		</script>
-	</body>
+    #submit {
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Caixa lateral com vídeo -->
+  <div class="side-video">
+    <div class="video-text">
+      <p style="font-size: 1.5em;">E a vida passa, num piscar de olhos,</p>
+      <p style="font-size: 1.5em;">logo já são 1, 2 e enfim seus 19...❤️</p>
+    </div>
+    <video autoplay muted loop>
+      <source src="assets/video/video.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+  </div>
+
+  <!-- Música de Fundo -->
+  <audio src="assets/audio/musica-login.mp3" controls autoplay loop></audio>
+
+  <!-- Formulário de Login -->
+  <h1>&ensp;</h1>
+  <div class="login-form">
+    <div class="close"></div>
+    <div class="head-info">
+      <label class="lbl-1"></label>
+      <label class="lbl-2"></label>
+      <label class="lbl-3"></label>
+    </div>
+    <div class="clear"></div>
+    <div class="avtar"><img src="login/images/avtar.png" /></div>
+    <form>
+      <input type="text" class="text" value="Nome" id="username"
+             onfocus="this.value = '';"
+             onblur="if (this.value == '') {this.value = 'Nome';}" >
+      <div class="key">
+        <input type="password" value="password" id="password"
+               onfocus="this.value = '';"
+               onblur="if (this.value == '') {this.value = 'password';}">
+      </div>
+    </form>
+
+    <!-- Timer e botão -->
+    <div id="countdown-timer">Aguarde 20 segundos...</div>
+    <div class="signin">
+      <input type="submit" value="Estou pronta! &#10084;" id="submit" onclick="validate()">
+    </div>
+  </div>
+
+  <div class="copy-rights"><p></p></div>
+
+  <!-- Timer Script -->
+  <script>
+    document.body.style.zoom = "60%";
+
+    const timerEl = document.getElementById("countdown-timer");
+    const button = document.getElementById("submit");
+
+    let seconds = 20;
+    timerEl.textContent = `Aguarde ${seconds} segundos...`;
+
+    const countdown = setInterval(() => {
+      seconds--;
+      timerEl.textContent = `Aguarde ${seconds} segundos...`;
+      if (seconds <= 0) {
+        clearInterval(countdown);
+        timerEl.style.display = "none";
+        button.style.opacity = "1"; // Aparece suavemente
+      }
+    }, 1000);
+  </script>
+</body>
 </html>
