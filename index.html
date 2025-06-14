@@ -105,29 +105,40 @@
     async function mostrarFrasesSuavemente() {
       if (animacaoJaExecutou) return;
       animacaoJaExecutou = true;
-
+    
+      // exibe as telas iniciais
       tela.style.display = "flex";
       tela.style.opacity = "1";
       intro.style.display = "flex";
       intro.style.opacity = "0";
-
-      for (let frase of frases) {
-        texto.style.opacity = "0";
-        await delay(500);
-        texto.textContent = frase;
-        texto.style.opacity = "1";
-        await delay(5000);
-        texto.style.opacity = "0";
-        await delay(1200);
-      }
-
-      tela.style.transition = "opacity 1.2s ease";
+    
+      // 1️⃣ PRIMEIRA FRASE (“Create by Victor”)
+      texto.style.transition = "opacity 3s ease-in-out"; // fade-in/out de 3s
+      texto.style.opacity    = "0";
+      await delay(300);
+      texto.textContent      = frases[0];
+      texto.style.opacity    = "1";    // fade-in
+      await delay(5000);               // mantém visível 5s
+      texto.style.opacity    = "0";    // inicia fade-out
+      await delay(3000);               // espera 3s do fade-out
+    
+      // 2️⃣ SEGUNDA FRASE (“Com muito amor e carinho”)
+      texto.style.transition = "opacity 2s ease-in-out"; // fade padrão
+      texto.style.opacity    = "0";
+      await delay(300);
+      texto.textContent      = frases[1];
+      texto.style.opacity    = "1";    // fade-in
+      await delay(3000);               // mantém visível 3s
+      texto.style.opacity    = "0";    // fade-out
+      await delay(1200);                // espera 0.8s do fade-out
+    
+      // 3️⃣ TRANSIÇÃO final de telas (pré-intro → intro)
+      tela.style.transition  = "opacity 1.2s ease";
       intro.style.transition = "opacity 1.2s ease";
-      tela.style.opacity = "0";
-      intro.style.opacity = "1";
-
-      await delay(1200);
-      tela.style.display = "none";
+      tela.style.opacity     = "0";
+      intro.style.opacity    = "1";
+      await delay(1400);
+      tela.style.display     = "none";
     }
 
     document.addEventListener("visibilitychange", () => {
